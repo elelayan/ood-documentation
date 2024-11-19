@@ -353,13 +353,13 @@ access by simply changing the file permissions of the application.</p>
 So, for example, if you wished to disable the file browser you would simply
 change it’s directory to 700 so it’s unreadable by regular users.</p>
 <p>When this directory is unreadable by regular users, the functionality
-it provides will be disabeled.</p>
+it provides will be disabled.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo chmod <span class="m">700</span> /var/www/ood/apps/sys/files
 </pre></div>
 </div>
-<p>Alternatively, if you wished to limit acess you can do so through group
+<p>Alternatively, if you wished to limit access you can do so through group
 permissions. For example, if you wanted to limit access to the file browser
-to only memebers in the Unix group <code class="docutils literal notranslate"><span class="pre">staff</span></code>, you would simply apply the
+to only members in the Unix group <code class="docutils literal notranslate"><span class="pre">staff</span></code>, you would simply apply the
 applicable file permission such that anonymous users cannot access the
 directory while members of the <code class="docutils literal notranslate"><span class="pre">staff</span></code> Unix group can.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo chmod <span class="m">750</span> /var/www/ood/apps/sys/files
@@ -409,7 +409,7 @@ OnDemand will be unavailable during this period. For details, please visit
 <span class="x">msg: |</span>
 <span class="x">  </span><span class="cp">&lt;%</span> <span class="k">if</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span> <span class="o">&lt;</span> <span class="no">Time</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
 <span class="x">  A **Ruby Partial Downtime** for 4 hours on Monday, September 24 from 8:00am to 12:00pm</span>
-<span class="x">  will prevent SSH login to Ruby nodes and and Ruby VDI sessions.</span>
+<span class="x">  will prevent SSH login to Ruby nodes and Ruby VDI sessions.</span>
 <span class="x">  </span><span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 </div>
@@ -436,7 +436,7 @@ OnDemand will be unavailable during this period. For details, please visit
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Some MOTD formats like <code class="docutils literal notranslate"><span class="pre">rss</span></code>, <code class="docutils literal notranslate"><span class="pre">markdown</span></code> and <code class="docutils literal notranslate"><span class="pre">markdown_erb</span></code> can contain malicous
+<p>Some MOTD formats like <code class="docutils literal notranslate"><span class="pre">rss</span></code>, <code class="docutils literal notranslate"><span class="pre">markdown</span></code> and <code class="docutils literal notranslate"><span class="pre">markdown_erb</span></code> can contain malicious
 HTML content. For your safety, by default, the Open OnDemand system will not render
 HTML.  We provide <a class="reference internal" href="reference/files/ondemand-d-ymls.html#motd-render-html"><span class="std std-ref">a configuration to enable HTML rendering in MOTD</span></a>
 should you need to render HTML.</p>
@@ -843,7 +843,7 @@ are simpler than others.</p>
 <p>This section provides the outline of how the navigation bar is generated to begin
 with, then details the various ways to modify it.</p>
 <p>Once you understand how the navigation bar is generated automatically,
-you can take steps to custimize it as you see fit.</p>
+you can take steps to customize it as you see fit.</p>
 <div class="section" id="understanding-the-default-navigation-bar">
 <span id="understanding-default-nav-bar"></span><h3>Understanding the default navigation bar<a class="headerlink" href="#understanding-the-default-navigation-bar" title="Permalink to this headline">¶</a></h3>
 <p>Some navigation menus and links are built-in to the system. The system
@@ -862,7 +862,7 @@ applications.</p>
 these manifests files and builds additional dropdown menus (or adds to existing menus)
 based on the <code class="docutils literal notranslate"><span class="pre">category</span></code> field.</p>
 <p>By default, the system will generate a new dropdown menu for every <code class="docutils literal notranslate"><span class="pre">category</span></code>
-it encounters.  Within each dropdown menu it will add seperators for each
+it encounters.  Within each dropdown menu it will add separators for each
 <code class="docutils literal notranslate"><span class="pre">subcategory</span></code> it encounters.</p>
 </div>
 <div class="section" id="limit-auto-generated-menu-bars">
@@ -882,7 +882,7 @@ read <a class="reference internal" href="#fully-customizing-the-navbar"><span cl
 by a Ruby initializer that you needed to modify. While the 2.x series will still support
 this scheme, Open OnDemand 3.0 will not.  3.0 will only support the <code class="docutils literal notranslate"><span class="pre">nav_categories</span></code>
 property.</p>
-<p>Here is the <a class="reference external" href="https://osc.github.io/ood-documentation/release-2.0/customization.html#control-which-apps-appear-in-the-dashboard-navbar">2.0 documentation for controling the navbar</a>.</p>
+<p>Here is the <a class="reference external" href="https://osc.github.io/ood-documentation/release-2.0/customization.html#control-which-apps-appear-in-the-dashboard-navbar">2.0 documentation for controlling the navbar</a>.</p>
 </div>
 </div>
 <div class="section" id="using-manifests-to-create-menu-items">
@@ -953,7 +953,7 @@ configuration would be (without showing any discovered apps).</p>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">logout</span><span class="w"></span>
 </pre></div>
 </div>
-<p>The configuration above would be equvialent to the default navigation bar as described
+<p>The configuration above would be equivalent to the default navigation bar as described
 in <a class="reference internal" href="#understanding-default-nav-bar"><span class="std std-ref">Understanding the default navigation bar</span></a>.</p>
 <p>As menus are dynamically discovered <em>from your system</em>, this documentation can only cover
 how a fresh install - with no other applications - would behave.</p>
@@ -1007,7 +1007,7 @@ are several pre-defined navigation menus that you can use.</p>
 </pre></div>
 </div>
 <div class="figure align-center">
-<img alt="An image of the navigation bar. From left to right the items are &quot;All Apps&quot; link, &quot;Apps&quot; dropdown menu, &quot;My Interactive Sesssions&quot; link, &quot;Develop&quot; drop down menu, &quot;Help&quot; drop down menu, &quot;Logout&quot; link and 'logged in as ood' text." src="_images/def-templates-menu.png" />
+<img alt="An image of the navigation bar. From left to right the items are &quot;All Apps&quot; link, &quot;Apps&quot; dropdown menu, &quot;My Interactive Sessions&quot; link, &quot;Develop&quot; drop down menu, &quot;Help&quot; drop down menu, &quot;Logout&quot; link and 'logged in as ood' text." src="_images/def-templates-menu.png" />
 </div>
 </div>
 <div class="section" id="menus-based-on-applications">
@@ -1098,7 +1098,7 @@ links to those profiles through the <code class="docutils literal notranslate"><
 <div class="section" id="menus-for-custom-pages">
 <span id="id10"></span><h4>Menus for custom pages<a class="headerlink" href="#menus-for-custom-pages" title="Permalink to this headline">¶</a></h4>
 <p>If you’ve enabled <a class="reference internal" href="#custom-pages-guide">custom_pages_guide</a> you can create navigation menus
-or single links directly to those pages through the the <code class="docutils literal notranslate"><span class="pre">page</span></code> attribute.</p>
+or single links directly to those pages through the <code class="docutils literal notranslate"><span class="pre">page</span></code> attribute.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nav_bar</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Single top level link</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Title&quot;</span><span class="w"></span>
@@ -1494,7 +1494,7 @@ criteria to be pinned to the dashboard.</p>
 <span class="w">  </span><span class="c1"># pin any app with an exact match on the metadata field_of_science of biology</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field_of_science</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;biology&#39;</span><span class="w"></span>
 
-<span class="w">  </span><span class="c1"># pin any app with an glob match *bio* on the metadata field_of_science</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># pin any app with a glob match *bio* on the metadata field_of_science</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">field_of_science</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;*bio*&#39;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -1539,7 +1539,7 @@ All the values are optional and any set will override the default from the appli
 <div class="section" id="custom-layouts-in-the-dashboard">
 <span id="dashboard-custom-layout"></span><h2>Custom layouts in the dashboard<a class="headerlink" href="#custom-layouts-in-the-dashboard" title="Permalink to this headline">¶</a></h2>
 <p>Administrators can now customize what widgets appear on the dashboard and how they’re
-layed out on the page.</p>
+laid out on the page.</p>
 <p>In it’s simplest form this feature allows for a rearrangement of existing widgets. As
 of 2.1 the existing widgets are:</p>
 <ul class="simple">
@@ -1853,7 +1853,7 @@ take affect.</p>
 <div class="section" id="grafana-support">
 <span id="id17"></span><h2>Grafana support<a class="headerlink" href="#grafana-support" title="Permalink to this headline">¶</a></h2>
 <p>It’s possible to display Grafana graphs within the ActiveJobs app when a user expands a given job.</p>
-<p>Grafana must be configured to support embedded panels and at this time it is also required to have a anonymous organization.  Below are configuration options are needed to support displaying Grafana panels in ActiveJobs. Adjust <cite>org_name</cite> to match whatever organization you wish to be anonymous.</p>
+<p>Grafana must be configured to support embedded panels and at this time it is also required to have an anonymous organization.  Below are configuration options are needed to support displaying Grafana panels in ActiveJobs. Adjust <cite>org_name</cite> to match whatever organization you wish to be anonymous.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Changing a Grafana install to support anonymous access can cause unintended consequences for how authenticated users interact with Grafana.
@@ -2102,7 +2102,7 @@ See <a class="reference internal" href="#menus-for-custom-pages"><span class="st
 <span id="support-ticket-guide"></span><h2>Support Tickets<a class="headerlink" href="#support-tickets" title="Permalink to this headline">¶</a></h2>
 <p>The Dashboard now supports sending a support ticket to your institution Help Desk system.
 The feature uses email as the delivery mechanism, but it could be extended to support others.</p>
-<p>To enable this feature, define the settings needed using the the configuration property <code class="docutils literal notranslate"><span class="pre">support_ticket</span></code>.
+<p>To enable this feature, define the settings needed using the configuration property <code class="docutils literal notranslate"><span class="pre">support_ticket</span></code>.
 Once this configuration object is defined, the <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Support</span> <span class="pre">Ticket</span></code> link will be shown in the <code class="docutils literal notranslate"><span class="pre">Help</span></code> navigation menu
 and in all interactive session cards.</p>
 <div class="figure align-center">
@@ -2118,9 +2118,9 @@ session to the body of the email to help troubleshoot the issue.</p>
 <ul class="simple">
 <li><p><strong>Username:</strong> Logged in user. Username will be added to the support ticket body for reference.</p></li>
 <li><p><strong>Email:</strong> Email address to communicate regarding this support ticket. A single email address is supported.</p></li>
-<li><p><strong>CC:</strong> Additional email address to communicate regardig this ticket. A single email address is supported.</p></li>
+<li><p><strong>CC:</strong> Additional email address to communicate regarding this ticket. A single email address is supported.</p></li>
 <li><p><strong>Subject:</strong> Brief description of the problem.</p></li>
-<li><p><strong>Attachments:</strong> Add screeshots of the problem to help with debugging and troubleshooting.</p></li>
+<li><p><strong>Attachments:</strong> Add screenshots of the problem to help with debugging and troubleshooting.</p></li>
 <li><p><strong>Description:</strong> Detail description of the problem.</p></li>
 </ul>
 <div class="section" id="configuration">
@@ -2140,8 +2140,8 @@ See example below or the <a class="reference external" href="https://guides.ruby
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Use caution when supplying username and password in delivery_settings.  These files are readable by
-unprivileged users and as such this information can be found by a sophsticated user without privilege
-escelation.</p>
+unprivileged users and as such this information can be found by a sophisticated user without privilege
+escalation.</p>
 </div>
 <p>Sample configuration:</p>
 <blockquote>
@@ -2161,7 +2161,7 @@ escelation.</p>
 <span class="w">  </span><span class="c1"># Optional.</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># Text added to the page under the support ticket header</span><span class="w"></span>
 <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">    </span><span class="no">My optional description Text for the support ticket feture</span><span class="w"></span>
+<span class="w">    </span><span class="no">My optional description Text for the support ticket feature</span><span class="w"></span>
 
 <span class="w">  </span><span class="c1"># email section is required and should always be present.</span><span class="w"></span>
 <span class="w">  </span><span class="c1"># It configures how the support ticket email is sent</span><span class="w"></span>
