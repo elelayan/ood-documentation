@@ -243,7 +243,7 @@ when initially installing and configuring Open OnDemand.</p>
 </ul>
 <p><code class="file docutils literal notranslate"><span class="pre">/var/log/httpd/&lt;hostname&gt;_access.log</span></code></p>
 <ul class="simple">
-<li><p>Where OnDemand will log succsseful logins.</p></li>
+<li><p>Where OnDemand will log successful logins.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -253,7 +253,7 @@ when initially installing and configuring Open OnDemand.</p>
 <p>The NGINX logs are the output of the user <a class="reference internal" href="../../glossary.html#glossary"><span class="std std-ref">PUN</span></a>. These logs will capture things relevant
 to a <em>particular user</em> such as:</p>
 <ul class="simple">
-<li><p>Debuggin issues related to job submissions for a user. For example, commands being issued to the scheduler
+<li><p>Debugging issues related to job submissions for a user. For example, commands being issued to the scheduler
 (<code class="docutils literal notranslate"><span class="pre">sbatch</span></code>, <code class="docutils literal notranslate"><span class="pre">qsub</span></code>, etc) can be seen here by searching for <code class="docutils literal notranslate"><span class="pre">execve</span></code>.</p></li>
 <li><p>Issues related to PUNs crashing and/or pages not rendering correctly.</p></li>
 </ul>
@@ -275,7 +275,7 @@ information they may need there as well for connections and errors.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The files will be <em>owned by the user</em> and so admins will need to ensure they are either
-able to substitue user or escalate to root in order to see these files.</p>
+able to substitute user or escalate to root in order to see these files.</p>
 </div>
 <p>In general the session data or job submission files for apps across the dashboard, such as the Job Composer,
 Batch Connect, or Frame-renderer, all start from the root of:</p>
