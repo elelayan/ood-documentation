@@ -122,6 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#attributes">Attributes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-which-cluster-to-submit-to">Configuring which cluster to submit to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-batch-connect-form-items">Global Batch Connect Form Items</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="form-widgets.html">Form Widgets</a></li>
@@ -330,7 +331,7 @@ various custom attributes</p>
 
 </div>
 <div class="section" id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<span id="bc-form-attributes"></span><h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <p>Attributes are <em>variables</em> whose values can be set either by the user from
 within an HTML form or hard-coded to a specific value in the form
 configuration. These attributes and their corresponding values are then made
@@ -955,6 +956,39 @@ different text than the default.</p>
 <p>The last option is to <a class="reference internal" href="submit.html#configuring-cluster-in-submit-yml"><span class="std std-ref">configure the cluster in the submit file</span></a>.
 When using this option, there’s no need to add any cluster configuration to the
 form.yml.</p>
+</div>
+<div class="section" id="global-batch-connect-form-items">
+<span id="global-bc-form-items"></span><h2>Global Batch Connect Form Items<a class="headerlink" href="#global-batch-connect-form-items" title="Permalink to this headline">¶</a></h2>
+<p>Since version 4.0, you can define form items once in an <code class="docutils literal notranslate"><span class="pre">ondemand.d</span></code> file
+that can be used in all batch connect applications.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Global batch connect items need to have the prefix <code class="docutils literal notranslate"><span class="pre">global_</span></code> otherwise
+OnDemand won’t recognize it as a global configuration.</p>
+</div>
+<p>Defining a global batch connect form item is just like specifying <a class="reference internal" href="#bc-form-attributes"><span class="std std-ref">Attributes</span></a>
+above. Only the location is in an <code class="docutils literal notranslate"><span class="pre">ondemand.d</span></code> file in <code class="docutils literal notranslate"><span class="pre">/etc/ood/config/ondemand.d</span></code>
+under the <code class="docutils literal notranslate"><span class="pre">global_bc_form_items</span></code> key.</p>
+<p>Here’s an example of defining a select widget with options called <code class="docutils literal notranslate"><span class="pre">global_queues</span></code>.
+Note the appropriate previx of <code class="docutils literal notranslate"><span class="pre">global</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># /etc/ood/config/ondemand.d/global_bc_items.yml</span><span class="w"></span>
+
+<span class="nt">global_bc_form_items</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">global_queues</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">widget</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">select</span><span class="w"></span>
+<span class="w">    </span><span class="nt">options</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;any&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;any&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;gpu&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;gpu&#39;</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&#39;special&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&#39;special&#39;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">data-option-for-cluster-not-special</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">false</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Then to use this form item, one simply needs to specify it in the <code class="docutils literal notranslate"><span class="pre">form</span></code> section
+of the file and it will display the select widget defined above.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># form.yml</span><span class="w"></span>
+<span class="nt">form</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">global_queues</span><span class="w"></span>
+</pre></div>
+</div>
 </div>
 </div>
 
