@@ -265,6 +265,16 @@ right menu: <em>Develop</em> → <em>My Sandbox Apps (Development)</em>. Finally
 My App</em> from the list of sandbox apps.</p>
 <p>You should now see the HTML form used to gather the user-defined attributes for
 building and launching the <code class="docutils literal notranslate"><span class="pre">my_app</span></code> Interactive App session.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since 4.0 HTML IDs of the form items are always lowercase. The examples above
+show lowercase configurations of <code class="docutils literal notranslate"><span class="pre">account</span></code>.  Specifying <code class="docutils literal notranslate"><span class="pre">Account</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code> or any variation of uppercase and lowercase will result in
+the same behhavior as specifying <code class="docutils literal notranslate"><span class="pre">account</span></code> (all lower case).</p>
+<p>If you write your own <code class="docutils literal notranslate"><span class="pre">form.js</span></code> take care to note that HTML IDs of these
+form items will <strong>always</strong> be lowercase regardless of how they’re defined in
+the YAML file.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can include dynamically generated content in the form by renaming the

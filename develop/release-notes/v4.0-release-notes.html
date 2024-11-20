@@ -303,6 +303,24 @@ Now in version 4.0, not only is there a way to dismiss announcements, announceme
 themselves are <code class="docutils literal notranslate"><span class="pre">dismissable</span></code> by default.</p>
 <p>The documentation for <a class="reference internal" href="../customizations.html#configure-announcements"><span class="std std-ref">Announcements</span></a> has been updated with this new feature.</p>
 </div>
+<div class="section" id="batch-connect-form-ids-are-now-lowercase">
+<h4>Batch connect form ids are now lowercase.<a class="headerlink" href="#batch-connect-form-ids-are-now-lowercase" title="Permalink to this headline">¶</a></h4>
+<p>To resolve some bugs with <a class="reference internal" href="../how-tos/app-development/interactive/dynamic-form-widgets.html#dynamic-bc-apps"><span class="std std-ref">Dynamic Form Widgets</span></a>, batch connect form
+items will now force lowercase HTML IDs.  This may break some javascript
+at centers expecting the HTML id of the form item to be a mix of uppercase
+and lowercase.</p>
+<p>This is an example of defining a form item with uppercase keys like <code class="docutils literal notranslate"><span class="pre">My_Cool_Form_Item</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="nt">form</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">My_Cool_Form_Item</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In this example <code class="docutils literal notranslate"><span class="pre">My_Cool_Form_Item</span></code> has uppercase characters, however the HTML
+id of the form item will be lowercase as shown below.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>id=&quot;batch_connect_session_context_my_cool_form_item&quot;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="dependency-updates">
 <h3>Dependency updates<a class="headerlink" href="#dependency-updates" title="Permalink to this headline">¶</a></h3>
