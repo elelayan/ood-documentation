@@ -368,7 +368,7 @@ sudo chown root:staff /var/www/ood/apps/sys/files
 </div>
 </div>
 <div class="section" id="announcements">
-<h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
+<span id="configure-announcements"></span><h2>Announcements<a class="headerlink" href="#announcements" title="Permalink to this headline">¶</a></h2>
 <p>To add an announcement message that appears at the top of the dashboard you can create a file at <code class="docutils literal notranslate"><span class="pre">/etc/ood/config/announcement.(md|yml)</span></code> or <code class="docutils literal notranslate"><span class="pre">/etc/ood/config/announcements.d/any_file_name.(md|yml)</span></code>.</p>
 <p>On each request the dashboard will check for the existence of this file. If it exists, the contents will be converted using markdown converter to HTML and displayed inside a bootstrap alert.</p>
 <p>For example, if I create an announcement.md file with the contents:</p>
@@ -386,23 +386,37 @@ OnDemand will be unavailable during this period. For details, please visit
 </div>
 <p>If the announcement file has the extension <code class="docutils literal notranslate"><span class="pre">yml</span></code> and is a yaml file it is first rendered using ERB and then the resulting file is parsed as YAML. The valid keys are:</p>
 <table class="docutils align-default" id="id24">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Config Files</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Announcement configuration keys.</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><th class="stub"><p>type</p></th>
-<td><p>warning, info, success, or danger</p></td>
-<td><p>this is the Bootstrap alert style</p></td>
+<tr class="row-odd"><td><p>Key</p></td>
+<td><p>Description</p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p>msg</p></th>
-<td><p>string containing markdown formatted message</p></td>
-<td><p>if this is a blank string (only whitespace), the alert will not display</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>The type of announcment. Values can be <code class="docutils literal notranslate"><span class="pre">warning</span></code>, <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">success</span></code>, or <code class="docutils literal notranslate"><span class="pre">danger</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>msg</p></td>
+<td><p>The announcement’s message.</p></td>
+</tr>
+<tr class="row-even"><td><p>dismissable</p></td>
+<td><p>Specify if the announcment is dismissable or not with <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>required</p></td>
+<td><p>Specify if the announcment is required or not with <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code>. When this is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, the user will not be
+do anything until the announcment has been accepted.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">required</span></code> announcements to present users with a ToS (terms of service),
+EULA (end user license agreement) or similar.</p>
+</div>
 <p>Because the announcement is rendered via ERB you can do some interesting things, like stop showing the announcement past a specified date:</p>
 <blockquote>
 <div><div class="highlight-erb notranslate"><div class="highlight"><pre><span></span><span class="x">type: warning</span>
