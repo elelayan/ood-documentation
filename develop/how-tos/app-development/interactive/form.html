@@ -425,6 +425,20 @@ version.</p>
 <span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </pre></div>
 </div>
+<p>To filter versions that show up in the drop-down list, you can use a Ruby regex (<a class="reference external" href="https://rubular.com/">https://rubular.com/</a>)
+(without the wrapping <cite>//</cite>) or a string:</p>
+<p>Regex:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">auto_modules_matlab</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(intel|gnu)\d*</span><span class="w"></span>
+</pre></div>
+</div>
+<p>String:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">auto_modules_matlab</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">filter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intel</span><span class="w"></span>
+</pre></div>
+</div>
 <p>See <a class="reference internal" href="../../../reference/files/ondemand-d-ymls.html#module-file-dir"><span class="std std-ref">the module directory configuration</span></a> on how to enable
 the cluster module files that need to be read.</p>
 <p>If you have dynamic form widgets enabled, the option list will be cluster aware.
