@@ -144,6 +144,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#global-batch-connect-items">Global Batch Connect items</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#novnc-quality-and-compression-defaults">noVNC quality and compression defaults</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#system-status-application">System Status application</a></li>
 </ul>
 </li>
 </ul>
@@ -245,6 +246,8 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#global-batch-connect-items">Global Batch Connect items</a></p></li>
 <li><p><a class="reference internal" href="#novnc-quality-and-compression-defaults">noVNC quality and compression defaults</a></p></li>
+<li><p><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></p></li>
+<li><p><a class="reference internal" href="#system-status-application">System Status application</a></p></li>
 </ul>
 </div>
 <div class="section" id="thanks">
@@ -377,6 +380,22 @@ variable <code class="docutils literal notranslate"><span class="pre">POLL_DELAY
 <p>In 4.0 this is a documented configuration with <code class="docutils literal notranslate"><span class="pre">POLL_DELAY</span></code> being
 deprecated. See <a class="reference internal" href="../reference/files/ondemand-d-ymls.html#bc-sessions-poll-delay"><span class="std std-ref">the bc_sessions_poll_delay documentation</span></a>
 for more details.</p>
+</div>
+<div class="section" id="system-status-application">
+<h3>System Status application<a class="headerlink" href="#system-status-application" title="Permalink to this headline">¶</a></h3>
+<p>Your center may have deployed OSC’s system status application:
+<a class="reference external" href="https://github.com/osc/osc-systemstatus">https://github.com/osc/osc-systemstatus</a>.</p>
+<p>4.0 now ships with this application natively, though it
+only supports Slurm clusters in this release.</p>
+<p>Here’s an example image from OSC detailing the system status of
+our clusters.</p>
+<div class="figure align-default">
+<img alt="An image showing the system status application. There are 4 panels for each cluster. Each panel shows the number of nodes available, cores available, GPUs available jobs running and jobs queued. It also shows percentages available for nodes, cores and GPUs." src="../_images/system-status.png" />
+</div>
+<p>This application will poll for updates at regular intervals to automatically
+update the page. The default is 10 seconds. See <a class="reference internal" href="../reference/files/ondemand-d-ymls.html#status-poll-delay"><span class="std std-ref">the documentation on status_poll_dela</span></a>
+for more details.</p>
+<p>Visit <a class="reference internal" href="../customizations.html#disabling-applications"><span class="std std-ref">Disabling applications</span></a> to disable this application.</p>
 </div>
 </div>
 </div>
