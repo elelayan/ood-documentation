@@ -134,6 +134,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#thanks">Thanks!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#details-of-administrative-changes">Details of administrative changes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecations">Deprecations</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#dependency-updates">Dependency updates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#selinux-changes">SELinux changes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#upgrade-directions">Upgrade directions</a></li>
@@ -142,6 +143,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#details-of-new-features">Details of new features</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#global-batch-connect-items">Global Batch Connect items</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#novnc-quality-and-compression-defaults">noVNC quality and compression defaults</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></li>
 </ul>
 </li>
 </ul>
@@ -330,6 +332,15 @@ id of the form item will be lowercase as shown below.</p>
 </div>
 </div>
 </div>
+<div class="section" id="deprecations">
+<h3>Deprecations<a class="headerlink" href="#deprecations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="poll-delay-is-deprecated">
+<h4>POLL_DELAY is deprecated<a class="headerlink" href="#poll-delay-is-deprecated" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">POLL_DELAY</span></code> is deprecated in 4.0 and being replaced
+by documented configurations. See <a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a>
+for more details.</p>
+</div>
+</div>
 <div class="section" id="dependency-updates">
 <h3>Dependency updates<a class="headerlink" href="#dependency-updates" title="Permalink to this headline">¶</a></h3>
 </div>
@@ -355,6 +366,17 @@ application.</p>
 for noVNC batch connect applications through the two <code class="docutils literal notranslate"><span class="pre">ondemand.d</span></code>
 properties <a class="reference internal" href="../reference/files/ondemand-d-ymls.html#novnc-default-compression"><span class="std std-ref">novnc_default_compression</span></a>
 and <a class="reference internal" href="../reference/files/ondemand-d-ymls.html#novnc-default-quality"><span class="std std-ref">novnc_default_quality</span></a>.</p>
+</div>
+<div class="section" id="batch-connect-sessions-poll-delay">
+<h3>Batch connect sessions poll delay<a class="headerlink" href="#batch-connect-sessions-poll-delay" title="Permalink to this headline">¶</a></h3>
+<p>When a user lands on <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">Interactive</span> <span class="pre">Sessions</span></code> page,
+the client browswer will request updates by default
+every 10 seconds.</p>
+<p>Sites wanting to change this had do use the hidden environment
+variable <code class="docutils literal notranslate"><span class="pre">POLL_DELAY</span></code>.</p>
+<p>In 4.0 this is a documented configuration with <code class="docutils literal notranslate"><span class="pre">POLL_DELAY</span></code> being
+deprecated. See <a class="reference internal" href="../reference/files/ondemand-d-ymls.html#bc-sessions-poll-delay"><span class="std std-ref">the bc_sessions_poll_delay documentation</span></a>
+for more details.</p>
 </div>
 </div>
 </div>
