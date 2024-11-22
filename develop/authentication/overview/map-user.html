@@ -232,6 +232,12 @@ corresponding per-user NGINX (PUN) server.</p>
 <p>Versions prior to 2.0 relied on <a class="reference internal" href="../../reference/files/ood-portal-yml.html#ood-portal-generator-user-map-cmd"><span class="std std-ref">user_map_cmd</span></a> to do this.
 Since 2.0 you should use the simpler and faster <a class="reference internal" href="../../reference/files/ood-portal-yml.html#ood-portal-generator-user-map-match"><span class="std std-ref">user_map_match</span></a>.</p>
 <p>Both with variations will be discussed here.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Since 4.0 user mapping also accepts UIDs to be returned as well as usernames.
+This can be helpful at centers where duplicate usernames and/or have multiple
+domains.</p>
+</div>
 <div class="section" id="remote-user">
 <h2><span class="section-number">2.1. </span>Remote User<a class="headerlink" href="#remote-user" title="Permalink to this headline">¶</a></h2>
 <p>It’s worth discussusing where <code class="docutils literal notranslate"><span class="pre">REMOTE_USER</span></code> is coming from.  When apache
