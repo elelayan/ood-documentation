@@ -147,6 +147,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#system-status-application">System Status application</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#user-mapping-now-accepts-uids">User mapping now accepts UIDs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-apps-can-have-a-text-header">Interactive apps can have a text header</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remove-runtime-dependency-on-scl">Remove runtime dependency on SCL</a></li>
 </ul>
 </li>
@@ -253,8 +254,9 @@
 <li><p><a class="reference internal" href="#novnc-quality-and-compression-defaults">noVNC quality and compression defaults</a></p></li>
 <li><p><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></p></li>
 <li><p><a class="reference internal" href="#system-status-application">System Status application</a></p></li>
-<li><p><cite>User mapping now accepts UIDs</cite></p></li>
-<li><p><cite>Remove runtime dependency on SCL</cite></p></li>
+<li><p><a class="reference internal" href="#user-mapping-now-accepts-uids">User mapping now accepts UIDs</a></p></li>
+<li><p><a class="reference internal" href="#interactive-apps-can-have-a-text-header">Interactive apps can have a text header</a></p></li>
+<li><p><a class="reference internal" href="#remove-runtime-dependency-on-scl">Remove runtime dependency on SCL</a></p></li>
 </ul>
 </div>
 <div class="section" id="thanks">
@@ -537,6 +539,15 @@ for more details.</p>
 <p>User mapping scripts can now return a UID instead of a username.
 This can be helpful for centers that have multiple domains and possible
 username collisions.</p>
+</div>
+<div class="section" id="interactive-apps-can-have-a-text-header">
+<h3>Interactive apps can have a text header<a class="headerlink" href="#interactive-apps-can-have-a-text-header" title="Permalink to this headline">¶</a></h3>
+<p>The item <code class="docutils literal notranslate"><span class="pre">form_header</span></code> can be added to intereactive applications
+to display additional text in the form. Note this is different from
+the <code class="docutils literal notranslate"><span class="pre">manifest.yml</span></code>’s <code class="docutils literal notranslate"><span class="pre">description</span></code> field becuase it will not be
+displayed on hoverover.</p>
+<p>See the <a class="reference internal" href="../how-tos/app-development/interactive/form.html#bc-form-header"><span class="std std-ref">form documentation for form_header</span></a>
+for more details.</p>
 </div>
 <div class="section" id="remove-runtime-dependency-on-scl">
 <h3>Remove runtime dependency on SCL<a class="headerlink" href="#remove-runtime-dependency-on-scl" title="Permalink to this headline">¶</a></h3>
