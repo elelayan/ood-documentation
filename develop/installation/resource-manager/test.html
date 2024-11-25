@@ -247,11 +247,7 @@ configuration files that reside under
 <code class="docutils literal notranslate"><span class="pre">cluster1</span></code>, so you will need to replace it with the name of the cluster
 you configured):</p>
 <blockquote>
-<div><p class="rubric">If your operating system is CentOS 7 or RHEL 7, run this command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo su <span class="nv">$USER</span> -c <span class="s1">&#39;scl enable ondemand -- bin/rake test:jobs:cluster1 RAILS_ENV=production&#39;</span>
-</pre></div>
-</div>
-<p class="rubric">Otherwise, run this command:</p>
+<div><p class="rubric">Run this command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo su <span class="nv">$USER</span> -c <span class="s1">&#39;source /opt/ood/ondemand/enable; bin/rake test:jobs:cluster1 RAILS_ENV=production&#39;</span>
 </pre></div>
 </div>
@@ -298,11 +294,7 @@ under <code class="file docutils literal notranslate"><span class="pre">/etc/ood
 arguments, e.g., a queue, memory requirements, an account, etc. You can
 provide these command line arguments as a string with the environment
 variable <code class="docutils literal notranslate"><span class="pre">SUBMIT_ARGS</span></code> as:</p>
-<p class="rubric">If your operating system is CentOS 7 or RHEL 7, run this command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo su <span class="nv">$USER</span> -c <span class="s1">&#39;scl enable ondemand-- bin/rake test:jobs:cluster1 RAILS_ENV=production SUBMIT_ARGS=&quot;-A myaccount&quot;&#39;</span>
-</pre></div>
-</div>
-<p class="rubric">Otherwise, run this command:</p>
+<p class="rubric">Run this command:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo su <span class="nv">$USER</span> -c <span class="s1">&#39;source /opt/ood/ondemand/enable; bin/rake test:jobs:cluster1 RAILS_ENV=production SUBMIT_ARGS=&quot;-A myaccount&quot;&#39;</span>
 </pre></div>
 </div>

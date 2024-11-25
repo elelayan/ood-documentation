@@ -387,7 +387,7 @@ the Unix domain sockets</p>
 <code class="sig-name descname">nginx_bin (String)</code></dt>
 <dd><p>the path to the NGINX binary</p>
 <dl>
-<dt>Default</dt><dd><p>Use NGINX installed by OnDemand Software Collections</p>
+<dt>Default</dt><dd><p>Use NGINX installed by OnDemand</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">nginx_bin</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/opt/ood/ondemand/root/usr/sbin/nginx&quot;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -427,7 +427,7 @@ the Unix domain sockets</p>
 <code class="sig-name descname">mime_types_path (String)</code></dt>
 <dd><p>the path to the system-installed NGINX <code class="docutils literal notranslate"><span class="pre">mime.types</span></code> file</p>
 <dl>
-<dt>Default</dt><dd><p>Use the NGINX installed by OnDemand Software Collections file</p>
+<dt>Default</dt><dd><p>Use the NGINX installed by OnDemand</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mime_types_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/opt/ood/ondemand/root/etc/nginx/mime.types&quot;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -445,7 +445,7 @@ the Unix domain sockets</p>
 <code class="sig-name descname">passenger_root (String)</code></dt>
 <dd><p>the <code class="docutils literal notranslate"><span class="pre">locations.ini</span></code> file that describes Passenger installation</p>
 <dl>
-<dt>Default</dt><dd><p>Use the file supplied by Passenger from OnDemand Software Collections</p>
+<dt>Default</dt><dd><p>Use the file supplied by Passenger from OnDemand</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">passenger_root</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/opt/ood/ondemand/root/usr/share/ruby/vendor_ruby/phusion_passenger/locations.ini&quot;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -468,8 +468,8 @@ the Unix domain sockets</p>
 </pre></div>
 </div>
 </dd>
-<dt>Example</dt><dd><p>Use the binary supplied by Ruby 2.4 installed by Software Collections</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">passenger_ruby</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/opt/rh/rh-ruby25/root/usr/bin/ruby&quot;</span><span class="w"></span>
+<dt>Example</dt><dd><p>Use the system installed Ruby</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">passenger_ruby</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/usr/bin/ruby&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </dd>
@@ -486,8 +486,8 @@ the Unix domain sockets</p>
 </pre></div>
 </div>
 </dd>
-<dt>Example</dt><dd><p>Use the binary supplied by Node.js installed by Software Collections</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">passenger_nodejs</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/opt/rh/rh-nodejs6/root/usr/bin/node&quot;</span><span class="w"></span>
+<dt>Example</dt><dd><p>Use the system installed Node.js</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">passenger_nodejs</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/usr/bin/node&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </dd>

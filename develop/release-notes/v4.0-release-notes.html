@@ -27,6 +27,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/language_data.js"></script>
+        <script src="../_static/tabs.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -146,6 +147,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#system-status-application">System Status application</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#user-mapping-now-accepts-uids">User mapping now accepts UIDs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-runtime-dependency-on-scl">Remove runtime dependency on SCL</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +242,8 @@
 <h2>Administrative changes<a class="headerlink" href="#administrative-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#breaking-changes">Breaking Changes</a></p></li>
+<li><p><a class="reference internal" href="#dependency-updates">Dependency updates</a></p></li>
+<li><p><a class="reference internal" href="#upgrade-directions">Upgrade directions</a></p></li>
 </ul>
 </div>
 <div class="section" id="new-features">
@@ -250,6 +254,7 @@
 <li><p><a class="reference internal" href="#batch-connect-sessions-poll-delay">Batch connect sessions poll delay</a></p></li>
 <li><p><a class="reference internal" href="#system-status-application">System Status application</a></p></li>
 <li><p><cite>User mapping now accepts UIDs</cite></p></li>
+<li><p><cite>Remove runtime dependency on SCL</cite></p></li>
 </ul>
 </div>
 <div class="section" id="thanks">
@@ -348,12 +353,140 @@ for more details.</p>
 </div>
 <div class="section" id="dependency-updates">
 <h3>Dependency updates<a class="headerlink" href="#dependency-updates" title="Permalink to this headline">¶</a></h3>
+<p>This release updates the following dependencies:</p>
+<ul>
+<li><p>Ruby 3.3 <strong>(RHEL 8 &amp; 9 only)</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The change in Ruby version means any Ruby based apps that are not provided by the OnDemand RPM must be rebuilt or supply their own <code class="docutils literal notranslate"><span class="pre">bin/ruby</span></code> to use the older version of ruby.</p>
+</div>
+</li>
+<li><p>NodeJS 20 <strong>(All OSes)</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The change in Node version means any Node based apps that are not provided by the OnDemand RPM must be rebuilt.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ubuntu 24.04 and Debian 12 are no longer support on ppc64le due to NodeJS 20 not being available on that architecture.</p>
+</div>
+</li>
+<li><p>Passenger 6.0.23</p></li>
+<li><p>NGINX 1.26.1</p></li>
+<li><p>ondemand-dex 2.41.1</p></li>
+</ul>
 </div>
 <div class="section" id="selinux-changes">
 <h3>SELinux changes<a class="headerlink" href="#selinux-changes" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="upgrade-directions">
 <h3>Upgrade directions<a class="headerlink" href="#upgrade-directions" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Update</strong> the <strong>development</strong> or <strong>test</strong> instances of OnDemand installed at your center <strong>first</strong> before you modify the <em>production</em> instance.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The OnDemand upgrade has only been tested going from 3.1.x to 4.0.x.</p>
+</div>
+<ol class="arabic">
+<li><p>Update OnDemand repository</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">RedHat/Rocky Linux/AlmaLinux 8</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">RedHat/Rocky Linux/AlmaLinux 9</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Ubuntu 20.04</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Ubuntu 22.04</button><button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">Ubuntu 24.04</button><button aria-controls="panel-0-0-5" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-5" name="0-5" role="tab" tabindex="-1">Debian 12</button><button aria-controls="panel-0-0-6" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-6" name="0-6" role="tab" tabindex="-1">Amazon Linux 2023</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo yum install -y https://yum.osc.edu/ondemand/4.0/ondemand-release-web-4.0-1.el8.noarch.rpm
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo yum install -y https://yum.osc.edu/ondemand/4.0/ondemand-release-web-4.0-1.el9.noarch.rpm
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget -O /tmp/ondemand-release-web_4.0.0-focal_all.deb https://apt.osc.edu/ondemand/4.0/ondemand-release-web_4.0.0-focal_all.deb
+sudo apt install /tmp/ondemand-release-web_4.0.0-focal_all.deb
+sudo apt update
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget -O /tmp/ondemand-release-web_4.0.0-jammy_all.deb https://apt.osc.edu/ondemand/4.0/ondemand-release-web_4.0.0-jammy_all.deb
+sudo apt install /tmp/ondemand-release-web_4.0.0-jammy_all.deb
+sudo apt update
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget -O /tmp/ondemand-release-web_4.0.0-noble_all.deb https://apt.osc.edu/ondemand/4.0/ondemand-release-web_4.0.0-noble_all.deb
+sudo apt install /tmp/ondemand-release-web_4.0.0-noble_all.deb
+sudo apt update
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-5" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-5" name="0-5" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wget -O /tmp/ondemand-release-web_4.0.0-bookworm_all.deb https://apt.osc.edu/ondemand/4.0/ondemand-release-web_4.0.0-bookworm_all.deb
+sudo apt install /tmp/ondemand-release-web_4.0.0-bookworm_all.deb
+sudo apt update
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-6" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-6" name="0-6" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf install -y https://yum.osc.edu/ondemand/4.0/ondemand-release-web-4.0-1.amzn2023.noarch.rpm
+</pre></div>
+</div>
+</div></div>
+</li>
+<li><p>Enable dependency repos</p>
+<p><strong>RHEL/Rocky/AlmaLinux 8 &amp; 9 only</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf module reset nodejs
+sudo dnf module <span class="nb">enable</span> nodejs:20
+sudo dnf module reset ruby
+sudo dnf module <span class="nb">enable</span> ruby:3.3
+</pre></div>
+</div>
+</li>
+<li><p>Update OnDemand</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">yum/dnf</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">apt</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo yum clean all
+sudo yum update ondemand
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt-get --only-upgrade install ondemand
+</pre></div>
+</div>
+</div></div>
+</li>
+<li><p>(Optional) If using Dex based authentiction, update the <code class="docutils literal notranslate"><span class="pre">ondemand-dex</span></code> package.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">yum/dnf</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">apt</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo yum update ondemand-dex
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt-get --only-upgrade install ondemand-dex
+</pre></div>
+</div>
+</div></div>
+</li>
+<li><p>Update Apache configuration and restart Apache.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo /opt/ood/ood-portal-generator/sbin/update_ood_portal
+</pre></div>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">RedHat/Rocky Linux/AlmaLinux 8 &amp; 9</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Ubuntu 20.04 &amp; 22.04 &amp; Debian 12</button><button aria-controls="panel-3-3-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-2" name="3-2" role="tab" tabindex="-1">Amazon 2023</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl try-restart httpd
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl try-restart apache2
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-2" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-2" name="3-2" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl try-restart httpd
+</pre></div>
+</div>
+</div></div>
+</li>
+<li><p>(Optional) If <code class="docutils literal notranslate"><span class="pre">ondemand-dex</span></code> was installed, restart the <code class="docutils literal notranslate"><span class="pre">ondemand-dex</span></code> service.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo systemctl try-restart ondemand-dex.service
+</pre></div>
+</div>
+</li>
+<li><p>(Optional) If <code class="docutils literal notranslate"><span class="pre">ondemand-selinux</span></code> was installed, see <a class="reference internal" href="../installation/modify-system-security.html#ood-selinux-updates"><span class="std std-ref">SELinux after Updates</span></a></p></li>
+<li><p>Force all PUNs to restart</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo /opt/ood/nginx_stage/sbin/nginx_stage nginx_clean -f
+</pre></div>
+</div>
+</li>
+<li><p>(Optional) Remove old dependencies from prior versions of OOD if they are not used by other applications.</p>
+<p><strong>RHEL/Rocky/AlmaLinux 8 &amp; 9 only</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf remove environment-modules scl-utils
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="section" id="details-of-new-features">
@@ -404,6 +537,13 @@ for more details.</p>
 <p>User mapping scripts can now return a UID instead of a username.
 This can be helpful for centers that have multiple domains and possible
 username collisions.</p>
+</div>
+<div class="section" id="remove-runtime-dependency-on-scl">
+<h3>Remove runtime dependency on SCL<a class="headerlink" href="#remove-runtime-dependency-on-scl" title="Permalink to this headline">¶</a></h3>
+<p>OnDemand no longer requires SCL on RHEL based systems.
+OnDemand also no longer has an indirect dependency on the TCL environment module packages.
+This removal of the SCL dependency should make it possible to install OnDemand on hosts such
+as a head node where the Lmod environment modules are setup.</p>
 </div>
 </div>
 </div>

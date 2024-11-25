@@ -217,12 +217,11 @@
 <span id="id1"></span><h1><span class="section-number">1. </span>Install Software<a class="headerlink" href="#install-software" title="Permalink to this headline">¶</a></h1>
 <p>Open OnDemand uses these packages, among many others.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.softwarecollections.org/en/scls/rhscl/httpd24/">Apache HTTP Server 2.4</a></p></li>
-<li><p>Ruby 3.0 with <strong class="command">rake</strong>, <strong class="command">bundler</strong>, and development
+<li><p>Apache HTTP Server 2.4</p></li>
+<li><p>Ruby 3.3 with <strong class="command">rake</strong>, <strong class="command">bundler</strong>, and development
 libraries</p></li>
-<li><p>Node.js 18</p></li>
+<li><p>Node.js 20</p></li>
 </ul>
-<p>Some operating systems use <a class="reference external" href="https://www.softwarecollections.org/en/">Software Collections</a> to satisfy these.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This tutorial is run from the perspective of an account that has
@@ -244,21 +243,21 @@ have to troubleshoot it.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">RockyLinux/Alma Linux 8</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">RockyLinux/Alma Linux 9</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">RHEL 8</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">RHEL 9</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf config-manager --set-enabled powertools
 sudo dnf install epel-release
-sudo dnf module <span class="nb">enable</span> ruby:3.1 nodejs:18
+sudo dnf module <span class="nb">enable</span> ruby:3.3 nodejs:20
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf config-manager --set-enabled crb
 sudo dnf install epel-release
-sudo dnf module <span class="nb">enable</span> ruby:3.1 nodejs:18
+sudo dnf module <span class="nb">enable</span> ruby:3.3 nodejs:20
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf install epel-release
-sudo dnf module <span class="nb">enable</span> ruby:3.1 nodejs:18
+sudo dnf module <span class="nb">enable</span> ruby:3.3 nodejs:20
 sudo subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 </pre></div>
 </div>
 </div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf install epel-release
-sudo dnf module <span class="nb">enable</span> ruby:3.1 nodejs:18
+sudo dnf module <span class="nb">enable</span> ruby:3.3 nodejs:20
 sudo subscription-manager repos --enable codeready-builder-for-rhel-9-x86_64-rpms
 </pre></div>
 </div>
