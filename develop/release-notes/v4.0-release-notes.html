@@ -379,6 +379,10 @@ for more details.</p>
 <li><p>NGINX 1.26.1</p></li>
 <li><p>ondemand-dex 2.41.1</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OnDemand repos no longer provide mod_auth_openidc or cjose.</p>
+</div>
 </div>
 <div class="section" id="selinux-changes">
 <h3>SELinux changes<a class="headerlink" href="#selinux-changes" title="Permalink to this headline">¶</a></h3>
@@ -490,7 +494,14 @@ sudo yum update ondemand
 </pre></div>
 </div>
 </li>
+<li><p>Set mod_auth_openidc and cjose to the OS packaged version</p></li>
 </ol>
+<blockquote>
+<div><p><strong>RHEL/Rocky/AlmaLinux 8 only</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf downgrade mod_auth_openidc
+</pre></div>
+</div>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="details-of-new-features">
