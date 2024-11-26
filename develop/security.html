@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Vulnerability Management" href="security/vulnerability-management.html" />
+    <link rel="next" title="Release Notes" href="release-notes.html" />
     <link rel="prev" title="PUN environment" href="reference/pun-environment.html" />
  
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34776817-3"></script>
@@ -134,14 +134,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#controls">Controls</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#relevant-references">Relevant References</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="security/vulnerability-management.html">Vulnerability Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="authentication/overview.html">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how-tos/monitoring/logging.html">Logging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="customizations.html">Customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vulnerability-management">Vulnerability Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#reporting-a-vulnerability">Reporting a Vulnerability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disclosure-policy">Disclosure Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments-on-policy">Comments on Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security-audits">Security Audits</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#relevant-references">Relevant References</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release Notes</a></li>
@@ -220,7 +220,7 @@
 <p>This document details the security framework for Open OnDemand, providing essential information that administrators need to know for secure deployment and operation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you’re here to report a vulerability, you may refer to <a class="reference internal" href="security/vulnerability-management.html#vulnerability-management"><span class="std std-ref">Vulnerability Management</span></a>.</p>
+<p>If you’re here to report a vulnerability, you may refer to <a class="reference internal" href="#vulnerability-management"><span class="std std-ref">Vulnerability Management</span></a>.</p>
 </div>
 </div>
 <div class="section" id="considerations">
@@ -252,80 +252,53 @@ through <a class="reference internal" href="customizations.html#disabling-applic
 </ul>
 </div>
 </div>
-<div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>Maintaining a secure and robust operational environment is critical for the success of Open OnDemand. Administrators are encouraged to implement the security practices recommended in this guide and to regularly review security settings and updates.</p>
+<div class="section" id="vulnerability-management">
+<span id="id2"></span><h2>Vulnerability Management<a class="headerlink" href="#vulnerability-management" title="Permalink to this headline">¶</a></h2>
+<p>Vulnerability management is a critical component of the security strategy for Open OnDemand.
+This document outlines the procedures for reporting and managing vulnerabilities.</p>
+<div class="section" id="reporting-a-vulnerability">
+<h3>Reporting a Vulnerability<a class="headerlink" href="#reporting-a-vulnerability" title="Permalink to this headline">¶</a></h3>
+<p>If you have security concerns or think you have found a vulnerability, please submit a
+private report by visiting the ‘Security’ section of our GitHub located at
+<a class="reference external" href="https://github.com/OSC/ondemand/security/">GitHub Open OnDemand Security</a> and
+clicking ‘Report a vulnerability’.</p>
+<p>For direct inquiries or issues in submitting a report, contact the core project team
+via email at <a class="reference external" href="mailto:security&#37;&#52;&#48;openondemand&#46;org">security<span>&#64;</span>openondemand<span>&#46;</span>org</a>.</p>
+</div>
+<div class="section" id="disclosure-policy">
+<h3>Disclosure Policy<a class="headerlink" href="#disclosure-policy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Upon reporting, you will receive a response within hours, acknowledging the receipt of the report.</p></li>
+<li><p>A primary handler from the team will be assigned to coordinate the fix and release process:</p></li>
+<li><p>Confirm the problem and determine the affected versions (1-2 days).</p></li>
+<li><p>Audit code to find any potential similar problems.</p></li>
+<li><p>Prepare fixes for all releases still under maintenance and release as soon as possible.</p></li>
+</ul>
+</div>
+<div class="section" id="comments-on-policy">
+<h3>Comments on Policy<a class="headerlink" href="#comments-on-policy" title="Permalink to this headline">¶</a></h3>
+<p>Suggestions to improve this process can be made via submitting a ticket, opening a
+Discourse topic, or a pull request.</p>
+</div>
+<div class="section" id="security-audits">
+<h3>Security Audits<a class="headerlink" href="#security-audits" title="Permalink to this headline">¶</a></h3>
+<p>Open OnDemand has been audited several times by Trusted CI, the NSF Cybersecurity
+Center of Excellence. The latest engagement report is available
+<a class="reference external" href="https://openondemand.org/sites/default/files/documents/Trusted%20CI%20Open%20OnDemand%20Engagement%20Final%20Report%20-%20REDACTED%20FOR%20PUBLIC%20RELEASE%20210712_0.pdf">here</a>.
+These audits have helped shape the security landscape of the platform and contribute
+to its ongoing security enhancements.</p>
+<p>Maintaining a secure and robust operational environment is critical for the success of
+Open OnDemand. Administrators are encouraged to implement the security practices
+recommended in this guide and to regularly review security settings and updates.</p>
+</div>
 </div>
 <div class="section" id="relevant-references">
 <h2>Relevant References<a class="headerlink" href="#relevant-references" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Security Topics</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="security/vulnerability-management.html">Vulnerability Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#reporting-a-vulnerability">Reporting a Vulnerability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#disclosure-policy">Disclosure Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#comments-on-policy">Comments on Policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#security-audits">Security Audits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security/vulnerability-management.html#conclusion">Conclusion</a></li>
+<ul class="simple">
+<li><p><a class="reference internal" href="authentication/overview.html#authentication-overview"><span class="std std-ref">Authentication Overview</span></a></p></li>
+<li><p><a class="reference internal" href="how-tos/monitoring/logging.html#logging"><span class="std std-ref">Logging</span></a></p></li>
+<li><p><a class="reference internal" href="customizations.html#customizations"><span class="std std-ref">Customizations</span></a></p></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="authentication/overview.html">Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="authentication/overview/configure-authentication.html">1. Configure Apache Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="authentication/overview/map-user.html">2. Setup User Mapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="authentication/overview/configure-logout.html">3. Configure Logout</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="how-tos/monitoring/logging.html">Logging</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/monitoring/logging.html#system-logs">System Logs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how-tos/monitoring/logging.html#session-data">Session Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="customizations.html">Customizations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#disabling-applications">Disabling applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#announcements">Announcements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#message-of-the-day-motd">Message of the Day (MOTD)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#branding">Branding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#overriding-pages">Overriding Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#add-urls-to-help-menu">Add URLs to Help Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#add-shortcuts-to-files-menu">Add Shortcuts to Files Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#configuration-profiles">Configuration Profiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#changing-the-navigation-bar">Changing the Navigation bar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#interactive-apps-menu">Interactive Apps Menu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#disable-uploads-or-downloads">Disable uploads or downloads</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-upload-limits">Set Upload Limits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-download-limits">Set Download Limits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#block-or-allow-directory-access">Block or Allow Directory Access</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#disabling-users">Disabling Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-default-ssh-host">Set Default SSH Host</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-ssh-allowlist">Set SSH Allowlist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#enable-and-configure-shell-ping-pong">Enable and configure Shell Ping Pong</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-ood-ssh-port">Set OOD SSH Port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#shell-app-ssh-command-wrapper">Shell App SSH Command Wrapper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#fix-unauthorized-websocket-connection-in-shell-app">Fix Unauthorized WebSocket Connection in Shell App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#custom-job-composer-templates">Custom Job Composer Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#job-composer-script-size-limit">Job Composer Script Size Limit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#hiding-job-arrays">Hiding Job Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#custom-error-page-for-missing-home-directory-on-launch">Custom Error Page for Missing Home Directory on Launch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#pinning-applications-to-the-dashboard">Pinning Applications to the Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#custom-layouts-in-the-dashboard">Custom layouts in the dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#customize-text-in-ondemand">Customize Text in OnDemand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#disk-quota-warnings-on-dashboard">Disk Quota Warnings on Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#balance-warnings-on-dashboard">Balance Warnings on Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#maintenance-mode">Maintenance Mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#grafana-support">Grafana support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#disable-host-link-in-batch-connect-session-card">Disable Host Link in Batch Connect Session Card</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#set-illegal-job-name-characters">Set Illegal Job Name Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#customize-dex-theme">Customize Dex Theme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#xdmod-integration">XDMoD Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#accessing-remote-file-systems">Accessing Remote File Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#cancel-interactive-sessions">Cancel Interactive Sessions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#custom-pages">Custom Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="customizations.html#support-tickets">Support Tickets</a></li>
-</ul>
-</li>
-</ul>
-</div>
 </div>
 </div>
 
@@ -337,7 +310,7 @@ through <a class="reference internal" href="customizations.html#disabling-applic
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="security/vulnerability-management.html" class="btn btn-neutral float-right" title="Vulnerability Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="release-notes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="reference/pun-environment.html" class="btn btn-neutral float-left" title="PUN environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
